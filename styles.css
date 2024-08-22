@@ -63,10 +63,15 @@ h1 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #fff;
+
     padding: 20px;
     
     border-radius: 10px;
+   
+}
+.right-section {
+
+    background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -120,12 +125,12 @@ button {
 }
 
 .clear-btn {
-    background-color: #E3FEF7;
+    background-color: #fee3e3;
     color: #003C43;
 }
 
 .clear-btn:hover {
-    background-color: #77B0AA;
+    background-color: #b07777;
     color: #fff;
     transform: scale(1.05);
 }
