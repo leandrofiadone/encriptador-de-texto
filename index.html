@@ -1,35 +1,33 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Encriptador de Texto</title>
     <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
+</head>
+<body>
     <h1>Encriptador de Texto</h1>
 
     <div class="container">
-      <!-- Contenedor para el campo de texto y el área de botones -->
-      <div class="left-section">
-        <!-- Campo para el texto que se va a encriptar/desencriptar -->
-        <textarea placeholder="Escribe el texto aquí..."></textarea>
-
-        <!-- Botones para encriptar y desencriptar -->
-        <div class="buttons">
-          <button>Encriptar</button>
-          <button>Desencriptar</button>
+        <div class="left-section">
+            <textarea id="campoTexto" placeholder="Escribe el texto aquí..."></textarea>
+            <div class="buttons">
+                <button onclick="botonEncriptar()">Encriptar</button>
+                <button onclick="botonDesencriptar()">Desencriptar</button>
+                <button onclick="borrarTexto()">Borrar</button>
+            </div>
         </div>
-      </div>
 
-      <!-- Área para mostrar el texto encriptado/desencriptado -->
-      <!-- Área para mostrar el texto encriptado/desencriptado -->
-      <div class="right-section">
-        <textarea
-          placeholder="Aquí se mostrará el texto encriptado/desencriptado..."
-          readonly></textarea>
-        <button class="copy-button">Copiar texto</button>
-      </div>
+        <div class="right-section">
+            <textarea id="campoMensaje" placeholder="Aquí se mostrará el texto encriptado/desencriptado..." readonly></textarea>
+            <button id="botonCopiar" class="copy-button" onclick="botonCopiar()">Copiar texto</button>
+            <p id="mensajes" style="display: none;"></p>
+            <img id="imagenSalida" src="your-image.png" alt="Imagen de salida" style="display: none;" />
+        </div>
     </div>
-  </body>
+
+    <!-- Referencia al archivo JavaScript externo -->
+    <script src="script.js"></script>
+</body>
 </html>
