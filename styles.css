@@ -9,21 +9,31 @@ body {
     justify-content: center;
     min-height: 100vh;
     background-color: #E3FEF7;
+    padding-top: 100px; /* Ajusta el espacio superior para el header */
+    box-sizing: border-box; /* Asegura que padding y border se incluyan en el tamaño total */
+    overflow-x: hidden; /* Evita el scroll horizontal */
 }
 
 /* Estilos del header */
 header {
     display: flex;
-    align-items: center;
-    justify-content: space-between; /* Logo a la derecha y título centrado */
-    width: 100%;
-    padding: 20px;
-    position: fixed; /* Fija el header en la parte superior */
+    justify-content: center; /* Centra el contenido del header horizontalmente */
+    position: fixed;
     top: 0;
-    left: 0;
-    z-index: 1000; /* Asegura que el header esté por encima de otros contenidos */
+    left: 0; /* Alinea el header al borde izquierdo */
+    width: 100%; /* Ocupa todo el ancho disponible */
+    padding: 20px; /* Ajusta el padding según necesites */
     background-color: transparent; /* Fondo transparente */
     box-shadow: none; /* Elimina la sombra */
+    z-index: 1000; /* Asegura que el header esté por encima de otros contenidos */
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px; /* Limita el ancho máximo del contenido del header */
+    margin: 0 auto; /* Centra el contenido dentro del header */
 }
 
 .logo {
@@ -37,18 +47,14 @@ h1 {
     font-size: 24px; /* Ajusta el tamaño del título según necesites */
 }
 
-/* Asegúrate de que el contenido principal no quede oculto detrás del header fijo */
-body {
-    padding-top: 60px; /* Ajusta este valor según el tamaño del header */
-}
-
+/* Estilos del contenido principal */
 .container {
     display: flex;
     flex-direction: column;
     gap: 20px;
     width: 90%;
     max-width: 1200px;
-    margin-top: 20px; /* Espacio debajo del header para que no se solape */
+    margin-top: 100px; /* Ajusta el espacio debajo del header para que no se solape */
 }
 
 .left-section,
