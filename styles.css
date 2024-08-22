@@ -125,12 +125,12 @@ button {
 }
 
 .clear-btn {
-    background-color: #fee3e3;
+    background-color: #fcb4b4;
     color: #003C43;
 }
 
 .clear-btn:hover {
-    background-color: #b07777;
+    background-color: #d16060;
     color: #fff;
     transform: scale(1.05);
 }
