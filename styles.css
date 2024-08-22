@@ -11,10 +11,35 @@ body {
     background-color: #E3FEF7;
 }
 
+/* Estilos del header */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Logo a la derecha y título centrado */
+    width: 100%;
+    padding: 20px;
+    position: fixed; /* Fija el header en la parte superior */
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Asegura que el header esté por encima de otros contenidos */
+    background-color: transparent; /* Fondo transparente */
+    box-shadow: none; /* Elimina la sombra */
+}
+
+.logo {
+    width: 100px; /* Ajusta el tamaño del logo según necesites */
+    height: auto;
+}
+
 h1 {
-    margin-bottom: 20px;
-    text-align: center;
+    margin: 0;
     color: #003C43;
+    font-size: 24px; /* Ajusta el tamaño del título según necesites */
+}
+
+/* Asegúrate de que el contenido principal no quede oculto detrás del header fijo */
+body {
+    padding-top: 60px; /* Ajusta este valor según el tamaño del header */
 }
 
 .container {
@@ -23,6 +48,7 @@ h1 {
     gap: 20px;
     width: 90%;
     max-width: 1200px;
+    margin-top: 20px; /* Espacio debajo del header para que no se solape */
 }
 
 .left-section,
