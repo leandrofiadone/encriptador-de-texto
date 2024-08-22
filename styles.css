@@ -65,6 +65,7 @@ h1 {
     align-items: center;
     background-color: #fff;
     padding: 20px;
+    
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -158,6 +159,8 @@ button {
     .right-section {
         flex: 1;
         margin: 0 10px;
+        height: 520px;
+        margin-bottom: 80px;
     }
 
     .left-section {
