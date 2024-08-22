@@ -12,13 +12,40 @@ const listado = [
 ]
 const advertencia = listado.join("\n\n")
 
-const matriz = [
-  ["e", "enter"],
-  ["i", "imes"],
-  ["a", "ai"],
-  ["o", "ober"],
-  ["u", "ufat"]
-]
+// Clave de cifrado para el cifrado César
+const claveCifrado = 3
+
+// Cifrar texto usando cifrado César
+function cifrarTexto(texto, clave) {
+  return texto
+    .split("")
+    .map((char) => {
+      if (char >= "a" && char <= "z") {
+        let codigo =
+          ((char.charCodeAt(0) - "a".charCodeAt(0) + clave) % 26) +
+          "a".charCodeAt(0)
+        return String.fromCharCode(codigo)
+      }
+      return char
+    })
+    .join("")
+}
+
+// Descifrar texto usando cifrado César
+function descifrarTexto(texto, clave) {
+  return texto
+    .split("")
+    .map((char) => {
+      if (char >= "a" && char <= "z") {
+        let codigo =
+          ((char.charCodeAt(0) - "a".charCodeAt(0) - clave + 26) % 26) +
+          "a".charCodeAt(0)
+        return String.fromCharCode(codigo)
+      }
+      return char
+    })
+    .join("")
+}
 
 function botonEncriptar() {
   const texto = encriptar(campoTexto.value)
@@ -27,18 +54,13 @@ function botonEncriptar() {
 
 function encriptar(fraseAEncriptar) {
   if (/^[a-z\s]+$/.test(fraseAEncriptar)) {
-    for (let i = 0; i < matriz.length; i++) {
-      if (fraseAEncriptar.includes(matriz[i][0])) {
-        fraseAEncriptar = fraseAEncriptar.replaceAll(matriz[i][0], matriz[i][1])
-      }
-    }
+    const textoCifrado = cifrarTexto(fraseAEncriptar, claveCifrado)
     campoTexto.value = ""
-
     campoMensaje.style.display = "block"
     imagenSalida.style.display = "none"
     areaCopia.style.display = "block"
     mensaje.style.display = "none"
-    return fraseAEncriptar
+    return textoCifrado
   } else {
     limpiarCampos()
     alert(advertencia)
@@ -53,21 +75,13 @@ function botonDesencriptar() {
 
 function desencriptar(fraseADesencriptar) {
   if (/^[a-z\s]+$/.test(fraseADesencriptar)) {
-    for (var i = 0; i < matriz.length; i++) {
-      if (fraseADesencriptar.includes(matriz[i][1])) {
-        fraseADesencriptar = fraseADesencriptar.replaceAll(
-          matriz[i][1],
-          matriz[i][0]
-        )
-      }
-    }
+    const textoDescifrado = descifrarTexto(fraseADesencriptar, claveCifrado)
     campoTexto.value = ""
-
     campoMensaje.style.display = "block"
     imagenSalida.style.display = "none"
     areaCopia.style.display = "block"
     mensaje.style.display = "none"
-    return fraseADesencriptar
+    return textoDescifrado
   } else {
     limpiarCampos()
     alert(advertencia)

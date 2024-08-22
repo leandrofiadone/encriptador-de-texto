@@ -8,12 +8,13 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background-color: #f0f0f0;
+    background-color: #E3FEF7;
 }
 
 h1 {
     margin-bottom: 20px;
     text-align: center;
+    color: #003C43;
 }
 
 .container {
@@ -47,7 +48,7 @@ textarea {
     padding: 10px;
     font-size: 16px;
     border-radius: 5px;
-    border: 1px solid #ccc;
+    border: 1px solid #135D66;
     box-sizing: border-box;
 }
 
@@ -63,13 +64,37 @@ button {
     cursor: pointer;
     border: none;
     border-radius: 5px;
-    background-color: #007bff;
     color: #fff;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
-button:hover {
-    background-color: #0056b3;
+.encrypt-btn {
+    background-color: #135D66;
+}
+
+.encrypt-btn:hover {
+    background-color: #003C43;
+    transform: scale(1.05);
+}
+
+.decrypt-btn {
+    background-color: #77B0AA;
+}
+
+.decrypt-btn:hover {
+    background-color: #135D66;
+    transform: scale(1.05);
+}
+
+.clear-btn {
+    background-color: #E3FEF7;
+    color: #003C43;
+}
+
+.clear-btn:hover {
+    background-color: #77B0AA;
+    color: #fff;
+    transform: scale(1.05);
 }
 
 /* Estilos para el botón de copiar texto */
@@ -80,13 +105,14 @@ button:hover {
     cursor: pointer;
     border: none;
     border-radius: 5px;
-    background-color: #28a745; /* Color verde */
+    background-color: #77B0AA;
     color: #fff;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 .copy-button:hover {
-    background-color: #218838; /* Color verde más oscuro en hover */
+    background-color: #135D66;
+    transform: scale(1.05);
 }
 
 /* Diseño responsivo */
